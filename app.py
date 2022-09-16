@@ -1,8 +1,6 @@
 from flask import Flask, request, render_template
 import tensorflow as tf
-# import matplotlib.pyplot as plt
 import numpy as np
-# from tensorflow import  keras
 
 
 app = Flask(__name__)           # created flask app
@@ -19,14 +17,14 @@ def predict():
 
     model = tf.keras.models.load_model('models/model1')  # specifically this code to load all custom objects
 
-    image = tf.io.read_file(img_path)
-    image_tensor = tf.image.decode_jpeg(image, channels=3)
-    image = tf.image.convert_image_dtype(image_tensor, tf.float32)
-    image = tf.image.resize(image, size=(224, 224))
-    image = tf.data.Dataset.from_tensors((tf.constant(image)))
-    batch_image = image.batch(1)
+    image = tf.io.read_file(img_path)       # read image as a tensor
+    image_tensor = tf.image.decode_jpeg(image, channels=3)      # decode to 3 channels (RGB)
+    image = tf.image.convert_image_dtype(image_tensor, tf.float32)      # convert values to float32
+    image = tf.image.resize(image, size=(224, 224))     # resize to (224, 224)
+    image = tf.data.Dataset.from_tensors((tf.constant(image)))      # converts to a constant tensor
+    batch_image = image.batch(1)        # turns the image data into a batch
 
-    pred = model.predict(batch_image)
+    pred = model.predict(batch_image)       # gives an array of 120. Each reqresenting a unique breed
 
     unique_breeds = ['affenpinscher', 'afghan_hound', 'african_hunting_dog', 'airedale', 
     'american_staffordshire_terrier', 'appenzeller',
@@ -65,7 +63,7 @@ def predict():
     'west_highland_white_terrier', 'whippet',
     'wire-haired_fox_terrier', 'yorkshire_terrier']
 
-    pred_label = unique_breeds[np.argmax(pred)]
+    pred_label = unique_breeds[np.argmax(pred)]     # gives the maximum predicted value from all the 120 elements
 
     return render_template("web.html", dog_image = img_path, prediction = pred_label)
 
