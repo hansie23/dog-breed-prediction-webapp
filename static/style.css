@@ -1,0 +1,85 @@
+<<<<<<< HEAD
+body {
+    background-image: url("bg-img.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+
+    text-align: center;
+  }
+
+form {
+    text-align: right;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+h2{
+  text-align: center;
+  font-family: serif;
+}
+
+p{
+  text-align: right;
+  font-family: Arial
+}
+
+img{
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    width: 300px;
+    margin: 0 auto;
+}
+
+li{
+  text-align: left;
+}
+=======
+body {
+    background-image: url("bg-img.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+
+    text-align: center;
+  }
+
+form {
+    text-align: right;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+h2{
+  text-align: center;
+  font-family: serif;
+}
+
+p{
+  text-align: right;
+  font-family: Arial
+}
+
+img{
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    width: 300px;
+    margin: 0 auto;
+}
+
+li{
+  text-align: left;
+}
+>>>>>>> 5bfe83d426b0490953b1a10b8bf3839c904442c7
