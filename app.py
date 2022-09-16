@@ -1,17 +1,17 @@
 from flask import Flask, request, render_template
 import tensorflow as tf
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
-from tensorflow import  keras
+# from tensorflow import  keras
 
 
-app = Flask(__name__)
-@app.route('/',methods=['GET','POST'])
+app = Flask(__name__)           # created flask app
+@app.route('/',methods=['GET'])      # routes to home(root directory)
 def home():
     return render_template("web.html")
 
 
-@app.route('/prediction',methods=['GET','POST'])
+@app.route('/prediction',methods=['POST'])
 def predict():
     img = request.files['dog_image']
     img_path = 'static/' + img.filename
