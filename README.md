@@ -23,5 +23,3 @@ Tensorflow / Tensorflow-CPU
 
 - Open the URL in a browser.<br><br>
 
-
-**The web app deployed on `Heroku` with `Docker` runs at "https://dogbreedprediction-webapp.herokuapp.com/"**
