@@ -12,7 +12,7 @@ def home():
 @app.route('/prediction',methods=['POST'])
 def predict():
     img = request.files['dog_image']
-    img_path = 'static/' + img.filename
+    img_path = 'static/user_uploaded_images/' + img.filename
     img.save(img_path)
 
     model = tf.keras.models.load_model('models/model1')  # specifically this code to load all custom objects

@@ -1,0 +1,31 @@
+<html>
+
+<head> -->
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css' )}}>
+</head>
+
+<body>
+
+    <title>Dog breed prediction</title>
+
+    <h2 style="color:aliceblue;">Dog breed prediction</h2><br><br>
+
+    <form action="/prediction" method="post" enctype="multipart/form-data">
+        <p style="color:aliceblue;text-align:left">Upload an image of a dog in format either '.jpg' or '.jpeg'</p>
+        <li>
+            <input style="color:aliceblue" type="file" accept="image" name="dog_image">
+        </li>
+
+        <button type="submit">Predict</button><br>
+    </form>
+
+    {% if prediction %}
+        <br><p style="color:aliceblue;text-align:center">Its called <b> {{ prediction }}</b>.</p>
+        <img src="{{ dog_image }}">
+    {% endif %}
+
+    <p style="color:aliceblue;">Made by Hansie.</p>
+
+</body>
+
+</html>
